@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const date = require(__dirname + "/date.js");
 const _ = require("lodash");
+require('dotenv').config();
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-sp:Test123@cluster0.jezlmow.mongodb.net/todolistDB");
+mongoose.connect("mongodb+srv://admin-sp:"+process.env.PASS+"@cluster0.jezlmow.mongodb.net/todolistDB");
 
 const itemsSchema = {
   name: String
@@ -153,7 +154,7 @@ app.get("/about", function (req, res) {
 
 let port = process.env.PORT;
 
-if(port == NULL || port == ""){
+if(port == null || port == ""){
   port = 3000;
 }
 
