@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.use(favicon(__dirname+ '/fav.png'));
+app.use(favicon(__dirname+ '/fav.ico'));
 
 mongoose.connect("mongodb+srv://admin-sp:"+process.env.PASS+"@cluster0.jezlmow.mongodb.net/todolistDB");
 
