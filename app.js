@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const date = require(__dirname + "/date.js");
 const _ = require("lodash");
+const favicon = require('express-favicon');
 require('dotenv').config();
 
 const app = express();
@@ -13,6 +14,8 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+app.use(favicon(__dirname+ 'fav.png'));
 
 mongoose.connect("mongodb+srv://admin-sp:"+process.env.PASS+"@cluster0.jezlmow.mongodb.net/todolistDB");
 
