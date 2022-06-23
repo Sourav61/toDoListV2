@@ -17,8 +17,7 @@ app.use(express.static("public"));
 
 app.use(favicon(__dirname+ '/fav.ico'));
 
-mongoose.connect("mongodb+srv://admin-sp:"+process.env.PASS+"@cluster0.jezlmow.mongodb.net/todolistDB");
-
+mongoose.connect("mongodb+srv://sp:"+ process.env.PASS +"@cluster0.z9qup0j.mongodb.net/todolistDB");
 const itemsSchema = {
   name: String
 };
